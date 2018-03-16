@@ -1,0 +1,17 @@
+<mat-card *ngIf="isLogin() === true">
+  <div *ngIf="resultFound == true">
+    <div *ngFor="let weather of list">
+      <mat-card>
+        <mat-card-header>
+          <div class="avatar" mat-card-avatar
+               [ngStyle]="{'background-image':'url('+ weather.imageUrl +')', 'background-size':'40px 40px'}"></div>
+          <mat-card-title>{{ weather.city }} {{ weather.temp }} C</mat-card-title>
+          <mat-card-subtitle>{{ weather.pressure }} mph</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+          <p>{{weather.description}}</p>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+</mat-card>

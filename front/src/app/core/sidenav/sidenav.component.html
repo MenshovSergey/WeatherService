@@ -1,0 +1,22 @@
+<div class="example-float">
+  <mat-list>
+    <mat-list-item *ngIf="isLogin() === false">
+      <button mat-raised-button color="primary" class="example-button" routerLink="">
+        <span class="example-spacer"></span>
+        <span>Login</span>
+      </button>
+    </mat-list-item>
+    <mat-list-item *ngIf="isLogin() === true">
+      <button mat-raised-button color="primary" class="example-button" routerLink="main">
+        <span class="example-spacer"></span>
+        <span>Main</span>
+      </button>
+    </mat-list-item>
+    <mat-list-item *ngIf="isLogin() === true">
+      <button mat-raised-button color="primary" class="example-button" routerLink="history">
+        <span class="example-spacer"></span>
+        <span>History</span>
+      </button>
+    </mat-list-item>
+  </mat-list>
+</div>

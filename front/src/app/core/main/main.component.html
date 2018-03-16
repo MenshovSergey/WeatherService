@@ -1,0 +1,29 @@
+<mat-card style="text-align: center" *ngIf="isLogin() === true">
+  <button (click)="getSomething('London')" mat-raised-button class="searchButton">London</button>
+  <button (click)="getSomething('Saint Petersburg')" mat-raised-button class="searchButton">Saint Petersburg</button>
+  <button (click)="getSomething('Moscow')" mat-raised-button class="searchButton">Moscow</button>
+  <button (click)="getSomething('Paris')" mat-raised-button class="searchButton">Paris</button>
+  <br>
+  <mat-input-container class="search" color="green">
+    <input matInput [(ngModel)]="searchQuery" name="searchQuery" placeholder="">
+  </mat-input-container>
+  <button (click)="getSomething(searchQuery)" mat-raised-button class="searchButton">Get Weather</button>
+
+  <h4 *ngIf="resultFound == false" mat-subheader>No Results</h4>
+  <div *ngIf="resultFound == true">
+    <div *ngFor="let weather of list">
+      <mat-card>
+        <mat-card-header>
+          <div class="avatar" mat-card-avatar
+          [ngStyle]="{'background-image':'url('+ weather.imageUrl +')', 'background-size':'40px 40px'}"></div>
+          <mat-card-title>{{ weather.city }} {{ weather.temp }}  C</mat-card-title>
+          <mat-card-subtitle>{{ weather.pressure }}  mph</mat-card-subtitle>
+        </mat-card-header>
+
+        <mat-card-content>
+          <p>{{weather.description}}</p>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+</mat-card>

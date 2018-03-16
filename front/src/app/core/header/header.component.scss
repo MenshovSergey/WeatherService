@@ -1,0 +1,29 @@
+.logo-label{
+  width: 200px;
+}
+
+.searchButton {
+  background-color: #00a6ca;
+  color: #fff;
+  width: 200px;
+  text-align: center;
+}
+
+.search {
+  margin-right: 15px;
+  margin-left: 200px;
+  width: 700px;
+}
+
+/deep/ .mat-input-placeholder {
+  color: #000000;
+}
+
+/deep/ .mat-input-underline {
+  background-color: #000000;
+  bottom: 1.5em;
+}
+
+/deep/ .mat-input-infix {
+  border-top: 1.2em solid transparent;
+}
